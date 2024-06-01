@@ -1,0 +1,40 @@
+#-
+#- description: mdb call with command-file
+#-
+#- version:
+#-  MPLABX-v6.05, XC8-v2.41
+#-
+#- usage:
+#-  -) make sure the following two paths are in your OS-search path:
+#-      <mplabx_install_path>\mplab_platform\bin
+#-      <mplabx_install_path>\gnuBins\GnuWin32\bin
+#-
+#-  -) start mdb call
+#-      (dos: \)> mdb.bat mdbbat-blink-cmd.txt
+#-
+#- history:
+#-  v1.0: working version
+#-
+
+# define the MCU
+Device PIC16F18076
+
+# set the debugger (hardware tool)
+hwtool pkobnano
+
+# program the MCU
+program Blink.X\dist\default\production\Blink.X.production.elf
+
+# run the program on the MCU
+run
+print counter
+echo "Start run for 30500 ms = 30.5 seconds"
+wait 30500
+halt
+
+# print variable(s)
+print counter
+
+# exit
+quit
+
