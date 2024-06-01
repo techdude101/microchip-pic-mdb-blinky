@@ -1,3 +1,4 @@
+echo Generating makefiles
 @CALL prjMakefilesGenerator.bat Blink.X
 
 cd Blink.X

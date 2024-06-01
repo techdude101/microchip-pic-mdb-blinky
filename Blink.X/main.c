@@ -62,9 +62,9 @@ int main(void)
     while(1)
     {
         LED_SetHigh();
-        __delay_ms(1000);
+        __delay_ms(500);
         LED_SetLow();
-        __delay_ms(1000);
+        __delay_ms(500);
         counter++;
     }    
 }

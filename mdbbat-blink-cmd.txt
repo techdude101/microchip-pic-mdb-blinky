@@ -26,10 +26,24 @@ hwtool pkobnano
 program Blink.X\dist\default\production\Blink.X.production.elf
 
 # run the program on the MCU
+echo "Start run for 5.1 seconds"
 run
+wait 5100
+
+# halt the target device
+halt
+
+# print variable(s)
 print counter
-echo "Start run for 30500 ms = 30.5 seconds"
-wait 30500
+
+# reset the MCU
+reset
+
+echo "Start run for 257 seconds - should cause uint8_t overflow"
+run
+wait 257000
+
+# halt the target device
 halt
 
 # print variable(s)
